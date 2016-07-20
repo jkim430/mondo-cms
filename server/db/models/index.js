@@ -1,6 +1,2 @@
-require('./coordinate');
-require('./creature');
+require('./post');
 require('./user');
-require('./shape');
-require('./world');
-require('./level');

@@ -1,6 +1,6 @@
 var Promise = require('bluebird');
 var chalk = require('chalk');
-var dbName = "evox";
+var dbName = "mondo";
 var env = require('./env');
 
 var DATABASE_URI = env.DATABASE_URI;

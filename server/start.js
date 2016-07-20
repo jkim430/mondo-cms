@@ -16,7 +16,6 @@ startDb
   .then(function() {
     app = require('./app');
     server.on('request', app);
-    require('./io')(server);
     server.listen(port, function() {
       console.log('The server is listening on port', chalk.green.bold(port), 'and loves you very much.');
     });

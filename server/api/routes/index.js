@@ -2,10 +2,8 @@
 var router = require('express').Router();
 module.exports = router;
 
-router.use('/worlds', require('./worlds'));
 router.use('/users', require('./users'));
-router.use('/shapes', require('./shapes'));
-router.use('/creatures', require('./creatures'));
+router.use('/posts', require('./posts'));
 
 // Make sure this is after all of
 // the registered routes!

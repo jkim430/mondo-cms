@@ -1,133 +1,51 @@
-<game-of-life>
-</game-of-life>
-<header>
-    <a name="page-top"></a>
-    <div id="home-container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="intro-text">
-                    <span class="name">Evox</span>
-                    <h4><i class="fa fa-qq animated infinite pulse" id="lil-creature"></i></h4>
-                    <hr>
-                    <span class="skills">An Interactive - Life Simulator - in 3D</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
 <!-- Portfolio Grid Section -->
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12 text-center">
-            <h2>Design Your World</h2>
-            <i class="fa fa-qq animated infinite pulse" id="lil-creature"></i><i class="fa fa-qq animated infinite pulse" id="lil-creature"></i>
-            <hr>
-            <p class="text-left">
-                Design a dynamic environment, with an atmospheric day and night cycle that changes in real-time. Build terrain in 3D. Choose from three different climate settings each with unique creatures.
-            </p>
-        </div>
+<div class="container aligner full-height">
+    <div class="col-xs-6">
+        <h4>Tap into your inner creative.</h4>
+        <h3>Sign up for MondoBlog today!</h3>
     </div>
-    <div class="row">
-        <div class="col-md-4 col-xs-12 text-center spacing">
-            <h4>GrassLand</h4>
-            <img class="noblock" id="home-pic" ng-src="3D-Grass-icon.png">
-        </div>
-        <div class="col-md-4 col-xs-12 text-center spacing">
-            <h4>Desert</h4>
-            <img class="noblock" id="home-pic" ng-src="desert-block-5.png">
-        </div>
-        <div class="col-md-4 col-xs-12 text-center spacing">
-            <h4>Ice and Snow!</h4>
-            <img class="noblock" id="home-pic" ng-src="3D-Snow-icon.png">
-        </div>
-    </div>
-    <h3 class="text-center">Choose different Environments</h3>
-</div>
-<!-- About Section -->
-<section class="success" id="about">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 text-center">
-                <h2>Design Your Creatures!</h2>
-                <i class="fa fa-qq animated infinite pulse" id="lil-creature"></i><i class="fa fa-qq animated infinite pulse" animated infinite pulse id="lil-creature"></i><i class="fa fa-qq animated infinite pulse" id="lil-creature"></i>
-                <hr>
-                <h4>Use pre-built creatures, or use the Creature Creator!</h4>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4 col-xs-12">
-                <p>Keep them alive as they interact with other creatures in three different environments.</p>
-            </div>
-            <div class="col-md-4 col-xs-12">
-                <p>Creatures have unique stats including size, vision, speed and social intelligence! Level up to increase your stats! Help your creature develop and procreate</p>
-            </div>
-            <div class="col-md-4 col-xs-12">
-                <p>Use our pre-built creatures (over 12 different types) or customize your own using our Creature Creator!</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4 very-small text-center spacing">
-                <img class="noblock img-rounded" ng-src="fox.png">
-            </div>
-            <div class="col-sm-4 very-small text-center spacing">
-                <img class="noblock img-rounded" ng-src="deer.png">
-            </div>
-            <div class="col-sm-4 very-small text-center spacing">
-                <img class="noblock img-rounded" ng-src="crocodile.png">
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Contact Section -->
-<section id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 text-center">
-                <h2>Sign Up Today!</h2>
-                <hr class="star-primary">
-                <button class="btn btn-danger" ui-sref="home.signup">Sign-Up</button>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Footer -->
-<footer class="text-center">
-    <div class="footer-above">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col col-md-6 col-xs-12">
-                    <h3>Developed By</h3>
-                    <h6 class="small-font"><a style="color:white" target="_parent" href="https://github.com/justYves">Yves Yuen<a></h6>
-                    <h6 class="small-font"><a  style="color:white" target="_parent" href="https://github.com/jkim430">Justin Kim</a></h6>
-                    <h6 class="small-font"><a  style="color:white" target="_parent" href="https://github.com/richardalexandermichels">Richard Michels</a></h6>
-                    <h6 class="small-font"><a  style="color:white" target="_parent" href="https://github.com/celanajaya">Peter Steele</a></h6>
+    <div class="col-xs-6">
+        <div class="alert alert-danger" role="alert" ng-show="error">{{error}}</div>
+        <form ng-submit="login()">
+            <div class="col-md-6 col-xs-12">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" class="form-control" ng-model="credentials.username"/>
                 </div>
-                <div class="footer-col col-md-6 col-xs-12">
-                    <h3>Fork Us on Github</h3>
-                    <ul class="list-inline">
-                        <li>
-                            <a target="_parent" href="https://github.com/justYves/evox" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
-                        </li>
-                    </ul>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" ng-model="credentials.password" />
                 </div>
+                <button class="btn btn-primary" type="submit">Log in</button>
+                <a class="spacing" ng-click="openSignup()">Sign up</a>
             </div>
-        </div>
+        </form>
     </div>
-    <div class="footer-below">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    Copyright &copy; EVOX 2015
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-<div class="scroll-top page-scroll visible-xs visible-sm">
-    <a class="btn btn-primary" href="#page-top">
-        <i class="fa fa-chevron-up"></i>
-    </a>
 </div>
 
-<ui-view></ui-view>
+<script type="text/ng-template" id="sign.html">
+  <form ng-submit="ok()">
+    <div class="modal-body" style="margin: auto; width: 450px">
+      <div class="form-group">
+        <label>First</label>
+        <input type="text" class="form-control" ng-model="newUser.name.first"/>
+      </div>
+      <div class="form-group">
+        <label>Last</label>
+        <input type="text" class="form-control" ng-model="newUser.name.last"/>
+      </div>
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" class="form-control" ng-model="newUser.username"/>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" ng-model="newUser.password" />
+      </div>
+    </div>
+    <div class="modal-footer centered">
+      <button class="btn submit" type="submit">Submit</button>
+    </div>
+  </form>
+</script>
+

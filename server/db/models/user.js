@@ -8,7 +8,7 @@ var userSchema = new mongoose.Schema({
         first: String,
         last: String
     },
-    email: {
+    username: {
         type: String,
         unique: true,
         required: true
@@ -23,42 +23,6 @@ var userSchema = new mongoose.Schema({
     isAdmin: {
         type: Boolean,
         default: false
-    },
-    key: {
-        type: String,
-        default: null
-    },
-    worlds: [{
-        name: {
-            type: mongoose.Schema.ObjectId,
-            ref: 'World'
-        },
-        creature: {
-            type: mongoose.Schema.ObjectId,
-            ref: 'Creature'
-        }
-    }],
-    creature: [{
-        // name: String,
-        creature: {
-            type: mongoose.Schema.ObjectId,
-            ref: 'Creature'
-        },
-        shape: {
-            type: mongoose.Schema.ObjectId,
-            ref: 'Shape'
-        },
-        // vision: Number,
-        // category: String,
-        // size: Number,
-    }],
-    levels: [{
-        type: mongoose.Schema.ObjectId,
-        ref: 'Level'
-    }],
-    points: {
-        type: Number,
-        default: 25
     }
 });
 

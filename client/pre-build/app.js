@@ -1,4 +1,4 @@
-var app = angular.module('GameOfLife', ['ui.router', 'fsaPreBuilt', 'btford.socket-io', 'ui.bootstrap']);
+var app = angular.module('MondoBlog', ['ui.router', 'fsaPreBuilt', 'ui.bootstrap']);
 
 app.config(function($urlRouterProvider, $locationProvider, $stateProvider) {
     // This turns off hashbang urls (/#about) and changes it to something normal (/about)
@@ -51,11 +51,33 @@ app.run(function($rootScope, AuthService, $state, UserFactory) {
             if (user) {
                 $state.go(toState.name, toParams);
             } else {
-                $state.go('home.login');
+                $state.go('home');
             }
         });
 
 
     });
 
+});
+
+app.config(function($stateProvider) {
+    $stateProvider
+    .state('home', {
+        url: '/',
+        templateUrl: '/pre-build/home/home.html',
+        controller: 'HomeController'
+    })
+    .state('posts', {
+        url: '/posts',
+        templateUrl: '/pre-build/posts/posts.html',
+        controller: 'PostsCtrl',
+        data: {
+            authenticate: true
+        },
+        resolve: {
+            posts: function(PostFactory) {
+                return PostFactory.getPosts();
+            }
+        }
+    });
 });

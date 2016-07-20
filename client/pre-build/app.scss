@@ -2,210 +2,60 @@
     box-sizing: border-box;
 }
 
-@mixin clearfix {
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+$brown: #3d3838;
+$white: #f4f2f2;
+$green: #68bd45;
+$dark-green: #4c8a40;
+$light-grey: #d2d0d0;
+
+body {
+  background-color: $brown;
+  color: $white;
+  font-family: Open Sans;
 }
 
-.carousel-control {
-    margin-top: auto;
-    margin-bottom: auto;
+a {
+  color: $white;
+  &:hover {
+    text-decoration: none;
+    color: #23b6e4;
+  }
 }
 
-#stats {
-    opacity: 0;
-    &:hover {
-        opacity: 0.9;
-    }
+.aligner {
+  display: -webkit-flexbox;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 
-#env-icon {
-    height: 4em;
-    margin-right: auto;
-    margin-left: auto;
-    position: relative;
+.centered {
+  text-align: center;
 }
 
-#env-btn {
-    padding-right: 0.3em;
-    padding-left: 0.3em;
-    padding-top: 0.3em;
-    padding-bottom: 0.3em;
-    &:hover,{
-        transition: all 0.4s ease;
-        transform:scale(1.1);
-        background: #18bc9c;
-        border-color: #18bc9c;
-    }
-
-    &:active,&:focus{
-        background: #18bc9c;
-        border-color: #18bc9c;
-    }
+.btn-primary {
+  background-color: $green;
+  border-color: $dark-green;
+  &:hover {
+    background-color: $dark-green;
+    border-color: $dark-green;
+  }
 }
 
-#level-icon {
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 1em;
-    width: 50%
+.btn:focus {
+  background-color: $dark-green;
+  border-color: $dark-green;
+  color: $white;
 }
 
-
-#edit-icon {
-    position: absolute;
-    width: 40%;
-    right: 0;
-    size: 2em;
-    color: #34495e;
-    &:hover {
-        transition: all 0.4s ease;
-        transform: scale(1.5);
-        color: #18bc9c;
-    }
+.no-padding {
+  padding: 0;
 }
 
-#delete-icon {
-    position: absolute;
-    width: 40%;
-    right: 0;
-    top: 30px;
-    size: 2em;
-    color: #34495e;
-    &:hover {
-        transition: all 0.4s ease;
-        transform: scale(1.5);
-        color: #18bc9c;
-    }
-}
-
-
-.grayscale {
-    filter: grayscale(100%);
-    /* Current draft standard */
-    -webkit-filter: grayscale(100%);
-    /* New WebKit */
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-}
-
-#level-num {
-    position: absolute;
-    color: white;
-    // font-size:2em;
-    width: 50%;
-    bottom: 5%;
-    left: 25%;
-}
-
-#check-mark {
-    position: absolute;
-    display: inline;
-    right: 21%;
-    top: 9%;
-    font-size: 4em;
-}
-
-.strike {
-    text-decoration: line-through;
-}
-
-.nav,
-.pagination,
-.carousel,
-.panel-title a {
-    cursor: pointer;
-}
-
-.info {
-    background-color: #1ABC9C;
-    border-radius: 5px;
-    opacity: 0.8;
-    color: white;
-    height: 100%;
-
-    .img-container{
-        display: inline-block;
-        margin-top: 2%;
-        margin-bottom: 3%;
-    }
-}
-
-.navbar-inverse {
-  background: #34495e;
-  font-size: 17px;
-}
-.navbar-inverse .navbar-brand {
-  color: #ffffff;
-  padding: 10px 28px 11px 32px;
-}
-.navbar-inverse .btn-navbar {
-  color: #ffffff;
-  margin: 7px 10px;
-}
-.navbar-inverse .btn-icon {
-  margin: 8px 5px 8px 15px;
-}
-.navbar-inverse .nav > li:first-child.active > a {
-  padding-left: 20px;
-}
-.navbar-inverse .nav > li:first-child > a {
-  border-left: none;
-}
-.navbar-inverse .nav > li.active > a,
-.navbar-inverse .nav > li.active > a:hover,
-.navbar-inverse .nav > li.active > a:focus {
-  background-color: #1abc9c;
-  border-bottom-color: #16a085;
-  border-left: none;
-  color: #ffffff;
-  padding-left: 20px;
-}
-.navbar-inverse .nav > li.active + li > a {
-  border-left: none;
-  padding-left: 20px;
-}
-.navbar-inverse .nav > li > a {
-  font-size: 25px;
-  border-bottom: 0;
-  border-right:0 !important;
-  border-left:0 !important;
-  color: #ffffff;
-  padding: 16px 20px 15px;
-  line-height: 20px;
-}
-.navbar-inverse .nav.navbar-right .dropdown-menu {
-  left: -100%;
-  margin-left: 17px;
-}
-.navbar-inverse .nav.navbar-right .open > .dropdown-menu:before {
-  display: block !important;
-}
-.navbar-inverse .nav.navbar-right > li > a {
-  border-radius: 0 6px 6px 0;
-}
-
-.navbar .nav >li {
-  display:block !important;
-}
-
-.navbar-right .nav > li {
-  display:block !important;
-}
-
-
-// Add your fractal Sass files below!
-// @import 'flat-ui/flat-ui';
-@import "animate";
-@import 'navbar/navbar';
 @import 'home/home';
-@import 'common/directives/control-panel/control-panel';
-@import 'common/directives/game-of-life/gameoflife';
-@import 'builder/builder';
-@import 'creatures/creatures';
-@import 'common/directives/creature-carousel/carousel';
+@import 'posts/posts';
 

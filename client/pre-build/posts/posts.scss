@@ -1,0 +1,58 @@
+.white-bg {
+  background-color: $white;
+  color: $brown;
+  padding: 20px;
+  padding-top: 0;
+  overflow: scroll;
+}
+
+.one-post {
+  border: 1px solid $light-grey;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.title {
+  border-bottom: 1px solid $light-grey;
+}
+
+.modal-body {
+  padding: 0px;
+}
+
+.author {
+  padding: 10px 0;
+}
+
+.add-new {
+  width: inherit;
+  text-align: center;
+  padding: 15px;
+  position: fixed;
+  z-index: 100;
+  background-color: rgba(244,242,242,0.8);
+}
+
+.bordered {
+  border-radius: 100%;
+  border-color: $light-grey;
+  &:hover {
+    border-color: $green;
+  }
+}
+.bordered:focus {
+  border-color: $green;
+}
+
+.btn-template {
+  color: $light-grey;
+  background-color: transparent;
+  transition: all 0.3s ease-in;
+  &:hover {
+    color: $green;
+  }
+}
+.add-btn:focus {
+  color: $green;
+  background-color: $white;
+}
